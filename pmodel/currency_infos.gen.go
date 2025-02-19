@@ -20,7 +20,7 @@ type CurrencyInfo struct {
 	CurrencySymbol    string `gorm:"column:currency_symbol;comment:货币符号，例如“₹”" json:"currency_symbol"`                                                        // 货币符号，例如“₹”
 	ExchangeRate      string `gorm:"column:exchange_rate;not null;default:1:1;comment:货币兑换比例，默认值为 1:1" json:"exchange_rate"`                                  // 货币兑换比例，默认值为 1:1
 	CurrencyType      int64  `gorm:"column:currency_type;not null;default:1;comment:货币类型：1-法定货币，2-数字货币，3-平台币" json:"currency_type"`                           // 货币类型：1-法定货币，2-数字货币，3-平台币
-	IsEnabled         int64  `gorm:"column:is_enabled;not null;default:1;comment:是否启用，默认启用" json:"is_enabled"`                                                // 是否启用，默认启用
+	IsEnabled         int8  `gorm:"column:is_enabled;not null;default:1;comment:是否启用，默认启用" json:"is_enabled"`                                                // 是否启用，默认启用
 	Protocol          string `gorm:"column:protocol;comment: 虚拟货币支持的协议，例如USDT支持['TRC-20','ERC-20'，'BEP-20']" json:"protocol"`                                 //  虚拟货币支持的协议，例如USDT支持["TRC-20","ERC-20"，"BEP-20"]
 	//
 	gormx.OperationBaseModel

@@ -15,9 +15,9 @@ type SystemConfig struct {
 	Category      string `gorm:"column:category;not null;comment:分组" json:"category"`                 // 分组
 	Key           string `gorm:"column:key;not null;comment:键" json:"key"`                            // 键
 	Val           string `gorm:"column:val;not null;comment:值" json:"val"`                            // 值
-	Status        int16  `gorm:"column:status;not null;default:1;comment:状态：1-启用；2-禁用" json:"status"` // 状态：1-启用；2-禁用
+	Status        int8  `gorm:"column:status;not null;default:1;comment:状态：1-启用；2-禁用" json:"status"` // 状态：1-启用；2-禁用
 	Metadata      string `gorm:"column:metadata;comment:元数据（额外存储信息，如默认值等）" json:"metadata"`           // 元数据（额外存储信息，如默认值等）
-	Rank          int32  `gorm:"column:rank;not null;comment:排序" json:"rank"`                         // 排序
+	Rank          int64  `gorm:"column:rank;not null;comment:排序" json:"rank"`                         // 排序
 	Remark        string `gorm:"column:remark;not null;comment:备注" json:"remark"`                     // 备注
 	//
 	gormx.OperationBaseModel
